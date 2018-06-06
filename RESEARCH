@@ -1,0 +1,58 @@
+ RESEARCH FOR WIZALDOG
+ 
+ *  = continues to be important and relevant
+
+Abjad, lilypad
+
+SDL http://www.libsdl.org/  
+
+pygame-
+https://www.pygame.org/docs/
+https://www.pygame.org/wiki/about
+
+Audio stuff list
+https://wiki.python.org/moin/PythonInMusic
+
+java music software
+http://www.softsynth.com/links/java_music.php
+
+*abc4j,  java library for music notation and abc notation (change to a midi but not from a midi?)
+https://code.google.com/archive/p/abc4j/
+tutorials: https://code.google.com/archive/p/abc4j/wikis
+render score to a png:https://code.google.com/archive/p/abc4j/wikis/JScore_basic_features.wiki
+
+*abc notation explained with examples http://abcnotation.com/examples
+
+great jmusic example tutorials http://explodingart.com/mmwj/
+
+https://sites.google.com/site/hobbydebraj/home/goertzel-algorithm-dtmf-detection
+Goertzel algorithm *second harmonics? voice and music can’t produce pure sinusoidal waves? window function to eliminate detection of false peaks*
+https://docs.google.com/spreadsheets/d/1T8t5bOkNDsWgMhKjoR1zB0uZxoOHVRo-kEbfRGjPMm4/edit?usp=sharing
+Goertzel algorithm spreadsheet calculator
+
+https://www.programcreek.com/java-api-examples/index.php?source_dir=TarsosDSP-master/src/core/be/tarsos/dsp/pitch/Goertzel.java 
+java code example
+
+https://stackoverflow.com/questions/40055298/using-goertzel-algorithm-to-detect-frequency
+Goertzel algorithm embedment 
+
+TarsosDSPusing FFT algorithm
+https://0110.be/releases/TarsosDSP/TarsosDSP-2.3/TarsosDSP-2.3-Manual.pdf TarsoDSP documentation
+
+
+
+
+4/21/2018
+It appears that using abc notation will be easier to begin with as the files can be stored as text and so are easily read, accessed and changed.  many softwares exist that convert abc notation to a midi. turning the music into an image in dot notation will most likely be more difficult.  abc notation is the Score element interface as opposed to score presentation element interface because the latter is how the consumer sees the music and the former is pure score information.
+
+4/22/2018
+Brien Colwell, works at HeadSpin
+Answered Jun 28, 2011 · Author has 361 answers and 823.9k answer views
+“This problem is called pitch detection or fundamental frequency estimation and there's no one best solution [1]. One simple approach would be for each whole note on the scale (see [2]), use the Goertzel algorithm to continuously calculate the power at that frequency [3]. The freq with the most power would be the current note. The Goertzel is much more efficient and simple for a few frequencies than the full FFT. Of course this assumes the instrument is in tune to that scale.”
+1 https://en.wikipedia.org/wiki/Pitch_detection_algorithm
+2 http://pages.mtu.edu/~suits/notefreqs.html
+3 https://en.wikipedia.org/wiki/Goertzel_algorithm
+
+Maybe the conversion from first recording to end midi/score pdf could be layered like an onion. 1:recording of whistle 2:pick out dominant notes for every 1/64(or whatever fraction is deemed most efficient) of a second and if a threshold level of sound is not met silence marker is recorded. 64 unique markers per second. 3: user is asked for time signature and bpm, using the time signature the 64 markers, the time signature and bpm an abc file is made of the recording 4: the user is asked if they want to change the abc file and the abc file is saved for later editing or use 5:a pdf score and  midi file are both made from the abc file.
+
+
